@@ -1,0 +1,33 @@
+mat-list-option {
+  &.mat-list-item {
+    height: 80%;
+
+    ::ng-deep .mat-list-item-content {
+      padding: 0 5%;
+
+      .mat-pseudo-checkbox {
+        height: 10%;
+        width: 10%;
+        border: 1px solid blue;
+        border-radius: 2px;
+        background-color: white;
+
+        .mat-pseudo-checkbox::after {
+          color: white;
+        }
+
+        &.mat-pseudo-checkbox-checked {
+          background-color: blue;
+          .mat-option {
+            color: white;
+          }
+        }
+      }
+    }
+
+    span {
+      font-size: 16px;
+      font-weight: normal;
+    }
+  }
+}

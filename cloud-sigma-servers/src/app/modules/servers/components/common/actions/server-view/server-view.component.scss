@@ -1,0 +1,22 @@
+:host {
+    header {
+        display: flex;
+        align-items: center;
+    }
+
+    main {
+        padding: 5%;
+
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &:last-of-type {
+                button {
+                    width: 60px;
+                }
+            }
+        }
+    }
+}

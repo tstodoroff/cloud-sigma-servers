@@ -1,0 +1,13 @@
+<header>
+    <h3>View Server</h3>
+</header>
+<ng-container *ngIf="selectedServer$ | async as selectedServer">
+    <main>
+        <section>
+            <span>{{ selectedServer | json }}</span>
+        </section>
+        <section>
+            <button (click)="openUpdateServerDetails(selectedServer)">Edit</button>
+        </section>
+    </main>
+</ng-container>

@@ -1,0 +1,46 @@
+<header>
+    <h3>Update server</h3>
+</header>
+<ng-container *ngIf="selectedServer$ | async as selectedServer">
+    <main>
+        <form role="form" autocomplete="off" [formGroup]="formGroup" (ngSubmit)="updateServerDetails()">
+            <section>
+                <mat-form-field>
+                    <input matInput formControlName="name" placeholder="Name" />
+                    <mat-error *ngIf="formGroup.get('name').invalid && formGroup.get('name').hasError('required')">
+                        'Name' is required
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput formControlName="memory" placeholder="Memory" />
+                    <mat-error *ngIf="formGroup.get('memory').invalid && formGroup.get('memory').hasError('required')">
+                        'Memory' is required
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-select formControlName="state" placeholder="State">
+                      <mat-option
+                        *ngFor="let state of serverStates"
+                        [value]="state"
+                      >
+                        {{ state }}
+                      </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="formGroup.get('state').invalid && formGroup.get('state').hasError('required')">
+                        'State' is required
+                    </mat-error>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input matInput formControlName="cpu" placeholder="CPU" />
+                    <mat-error *ngIf="formGroup.get('cpu').invalid && formGroup.get('cpu').hasError('required')">
+                        'CPU' is required
+                    </mat-error>
+                </mat-form-field>
+            </section>
+            <section>
+                <button type="submit" mat-stroked-button [disabled]="formGroup.invalid">Submit</button>
+            </section>
+        </form>
+    </main>
+</ng-container>
+

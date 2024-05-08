@@ -1,0 +1,13 @@
+<mat-selection-list role="listbox" (selectionChange)="viewServerDetails($event)">
+  <mat-list-option
+    role="option"
+    *ngFor="let server of servers; last as last; trackBy: trackByAlphaCode"
+    [value]="server"
+  >
+    <span>{{ server?.mem }}</span>
+    <span>{{ server?.state }}</span>
+    <span>{{ server?.cpu }}</span>
+    <span>{{ server?.name }}</span>
+    <mat-divider *ngIf="!last"></mat-divider>
+  </mat-list-option>
+</mat-selection-list>

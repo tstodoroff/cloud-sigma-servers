@@ -1,0 +1,33 @@
+:host {
+    header {
+        display: flex;
+        align-items: center;
+    }
+
+    main {
+        padding: 5%;
+
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            padding: 5%;
+
+            &:first-of-type {
+                display: flex;
+                text-align: left;
+                width: 50%;
+
+                ::ng-deep mat-form-field {
+                    margin: 2%;
+                }
+            }
+
+            &:last-of-type {
+                button {
+                    width: 60px;
+                }
+            }
+        }
+    }
+}
